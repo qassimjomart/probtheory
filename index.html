@@ -1,0 +1,307 @@
+<!-- HTML document for "Теория вероятностей и математическая статистика" answers -->
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ответы по Теории вероятностей и МС</title>
+    <!-- Подключение Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Подключение шрифта Inter -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6; /* Light gray background */
+        }
+    </style>
+    <!-- Подключение KaTeX CSS для рендеринга формул -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css" xintegrity="sha384-GvrOX6k2Z5xS7N0L1+1jQe+S+bM6LzPz+Y8hV2R/x8/j3aG9/yA/zD3z0I6n4x6e2n4z/7uWzS+B" crossorigin="anonymous">
+    <!-- Подключение KaTeX JS и Auto-render Extension -->
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js" xintegrity="sha384-oV+3G/GjJg/Gz/V0uL7m+Uv1/1V7X4aG9/yA/zD3z0I6n4x6e2n4z/7uWzS+B" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" xintegrity="sha384-Y2u81Z94n+1V7I5s6/xG35/n2N+1I78/G8v3G9/yA/zD3z0I6n4x6e2n4z/7uWzS+B" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+    <script>
+        // Конфигурация KaTeX auto-render для распознавания стандартных разделителей LaTeX: $...$ и $$...$$
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                // Разделители для формул:
+                delimiters: [
+                    {left: "$$", right: "$$", display: true}, // Для блочных формул
+                    {left: "\\[", right: "\\]", display: true}, // Альтернативный разделитель для блочных формул
+                    {left: "$", right: "$", display: false}, // Для встроенных формул
+                    {left: "\\(", right: "\\)", display: false} // Альтернативный разделитель для встроенных формул
+                ],
+                // Опция для обработки ошибок рендеринга
+                throwOnError : false
+            });
+        });
+    </script>
+</head>
+<body class="p-4 md:p-8">
+    <div class="max-w-4xl mx-auto bg-white p-6 md:p-10 rounded-xl shadow-2xl border border-gray-100">
+
+        <!-- Основной заголовок -->
+        <h1 class="text-3xl font-extrabold mb-8 text-center text-indigo-700 border-b-4 border-indigo-200 pb-3">
+            Ответы на вопросы по дисциплине «Теория вероятностей и математическая статистика»
+        </h1>
+
+        <div class="space-y-6">
+            
+            <h2 class="text-2xl font-bold text-gray-800 border-l-4 border-indigo-500 pl-3 pt-2 pb-2 mt-8">Основы комбинаторики</h2>
+            
+            <div class="text-gray-700 space-y-4">
+                <p><span class="font-semibold text-indigo-600">1. Правило сложения:</span> Если элемент $A$ можно выбрать $m$ способами, а элемент $B$ можно выбрать $k$ способами (и выбор $A$ исключает выбор $B$), то выбор "$A$ или $B$" можно осуществить $m+k$ способами.</p>
+
+                <p><span class="font-semibold text-indigo-600">2. Правило умножения:</span> Если элемент $A$ можно выбрать $m$ способами, а после этого элемент $B$ можно выбрать $k$ способами, то выбор пары "$A$ и $B$" можно осуществить $m \cdot k$ способами.</p>
+
+                <p><span class="font-semibold text-indigo-600">3. Размещения без повторений:</span> Упорядоченные наборы из $k$ элементов, выбранных из $n$ различных. $$\displaystyle A_n^k = \frac{n!}{(n-k)!}$$</p>
+
+                <p><span class="font-semibold text-indigo-600">4. Размещения с повторениями:</span> Упорядоченные наборы из $k$ элементов, выбранных из $n$ типов. $$\displaystyle \bar{A}_n^k = n^k$$</p>
+
+                <p><span class="font-semibold text-indigo-600">5. Перестановки и их свойства:</span> Упорядоченные наборы из всех $n$ элементов. $\displaystyle P_n = n!$. Различны только порядком элементов.</p>
+
+                <p><span class="font-semibold text-indigo-600">6. Связь перестановок с факториалом:</span> Число перестановок из $n$ элементов равно $n!$ ($n$ факториал): $P_n = n!$.</p>
+
+                <p><span class="font-semibold text-indigo-600">7. Сочетания без повторений:</span> Неупорядоченные наборы из $k$ элементов, выбранных из $n$ различных. $$\displaystyle C_n^k = \frac{n!}{k!(n-k)!}$$</p>
+
+                <p><span class="font-semibold text-indigo-600">8. Сочетания с повторениями:</span> Неупорядоченные наборы из $k$ элементов, выбранных из $n$ типов. $\displaystyle \bar{C}_n^k = C_{n+k-1}^k$.</p>
+
+                <p><span class="font-semibold text-indigo-600">9. Тождество $\displaystyle C_n^k = C_n^{n-k}$:</span> Число способов выбрать $k$ элементов равно числу способов выбрать $n-k$ элементов, которые **не** будут выбраны.</p>
+
+                <p><span class="font-semibold text-indigo-600">10. Комбинаторные формулы и их взаимосвязь:</span> Перестановки – частный случай размещений ($P_n = A_n^n$). Сочетания — неупорядоченные размещения ($A_n^k = C_n^k \cdot P_k$).</p>
+            </div>
+
+            <h2 class="text-2xl font-bold text-gray-800 border-l-4 border-indigo-500 pl-3 pt-2 pb-2 mt-8">Основные понятия теории вероятностей</h2>
+
+            <div class="text-gray-700 space-y-4">
+                <p><span class="font-semibold text-indigo-600">11. Основные понятия теории вероятностей. Пространство элементарных исходов:</span> $\Omega$ (омега) — множество всех возможных, неразложимых результатов случайного эксперимента.</p>
+
+                <p><span class="font-semibold text-indigo-600">12. Классическое определение вероятности:</span> Вероятность события $A$ равна отношению числа благоприятствующих исходов ($m$) к общему числу равновозможных элементарных исходов ($n$): $$\displaystyle P(A) = \frac{m}{n}$$</p>
+
+                <p><span class="font-semibold text-indigo-600">13. Свойства вероятности как числовой меры:</span> 1) $0 \le P(A) \le 1$. 2) $P(\Omega) = 1$ (достоверное событие). 3) $P(\emptyset) = 0$ (невозможное событие).</p>
+
+                <p><span class="font-semibold text-indigo-600">14. Совместимые и несовместимые события:</span></p>
+                <ul class="list-disc list-inside ml-4 space-y-1">
+                    <li>**Несовместимые:** Не могут произойти одновременно ($A \cap B = \emptyset$).</li>
+                    <li>**Совместимые:** Могут произойти одновременно ($A \cap B \neq \emptyset$).</li>
+                </ul>
+
+                <p><span class="font-semibold text-indigo-600">15. Достоверные, невозможные и случайные события:</span></p>
+                <ul class="list-disc list-inside ml-4 space-y-1">
+                    <li>**Достоверное ($\Omega$):** Происходит всегда ($P(\Omega)=1$).</li>
+                    <li>**Невозможное ($\emptyset$):** Не происходит никогда ($P(\emptyset)=0$).</li>
+                    <li>**Случайное ($A$):** Может как произойти, так и не произойти ($0 < P(A) < 1$).</li>
+                </ul>
+
+                <p><span class="font-semibold text-indigo-600">16. Противоположное событие и его свойства:</span> Событие $\bar{A}$, состоящее в том, что событие $A$ не наступило. Свойства: $\bar{A}$ и $A$ несовместимы, $\bar{A} \cup A = \Omega$, $P(\bar{A}) = 1 - P(A)$.</p>
+
+                <p><span class="font-semibold text-indigo-600">17. Теорема сложения вероятностей:</span></p>
+                <ul class="list-disc list-inside ml-4 space-y-1">
+                    <li>Для **несовместимых** $A$ и $B$: $P(A \cup B) = P(A) + P(B)$.</li>
+                    <li>Для **совместимых** $A$ и $B$: $P(A \cup B) = P(A) + P(B) - P(A \cap B)$.</li>
+                </ul>
+
+                <p><span class="font-semibold text-indigo-600">18. Теорема умножения вероятностей:</span></p>
+                <ul class="list-disc list-inside ml-4 space-y-1">
+                    <li>Для **зависимых** $A$ и $B$: $P(A \cap B) = P(A) \cdot P(B|A)$.</li>
+                    <li>Для **независимых** $A$ и $B$: $P(A \cap B) = P(A) \cdot P(B)$.</li>
+                </ul>
+
+                <p><span class="font-semibold text-indigo-600">19. Условная вероятность:</span> Вероятность наступления события $B$ при условии, что событие $A$ уже произошло: $$\displaystyle P(B|A) = \frac{P(A \cap B)}{P(A)}, \text{ при условии } P(A) > 0$$</p>
+
+                <p><span class="font-semibold text-indigo-600">20. Формула полной вероятности:</span> Вероятность события $A$, которое может наступить только с одним из событий полной группы гипотез $H_1, H_2, \ldots, H_n$: $$\displaystyle P(A) = \sum_{i=1}^{n} P(H_i) \cdot P(A|H_i)$$</p>
+
+                <p><span class="font-semibold text-indigo-600">21. Операции над событиями: объединение:</span> Событие $A \cup B$ (сумма) — наступление хотя бы одного из событий $A$ или $B$.</p>
+
+                <p><span class="font-semibold text-indigo-600">22. Операции над событиями: пересечение:</span> Событие $A \cap B$ (произведение) — совместное наступление событий $A$ и $B$.</p>
+
+                <p><span class="font-semibold text-indigo-600">23. Независимость событий:</span> События $A$ и $B$ независимы, если вероятность одного не зависит от наступления другого: $P(A|B) = P(A)$ и $P(A \cap B) = P(A) \cdot P(B)$.</p>
+
+                <p><span class="font-semibold text-indigo-600">24. Классификация событий по возможности реализации:</span> Достоверные, невозможные, случайные (см. п. 15).</p>
+
+                <p><span class="font-semibold text-indigo-600">25. Полная группа событий:</span> Множество несовместимых событий $H_1, H_2, \ldots, H_n$, объединение которых составляет достоверное событие $\Omega$: $$\displaystyle \bigcup_{i=1}^{n} H_i = \Omega$$</p>
+
+                <p><span class="font-semibold text-indigo-600">26. Связь события и его дополнения:</span> Событие $A$ и его дополнение $\bar{A}$ образуют полную группу несовместимых событий. $P(A) + P(\bar{A}) = 1$.</p>
+
+                <p><span class="font-semibold text-indigo-600">27. Фундаментальные свойства вероятностных операций:</span> Коммутативность, ассоциативность, дистрибутивность (аналогично булевым операциям), а также свойства вероятности (см. п. 13, 17, 18).</p>
+
+                <p><span class="font-semibold text-indigo-600">28. Геометрическая вероятность:</span> Вероятность попадания точки в область $A$, являющуюся частью большей области $\Omega$, равна отношению мер этих областей (длины, площади, объема): $$\displaystyle P(A) = \frac{\text{мера}(A)}{\text{мера}(\Omega)}$$</p>
+
+                <p><span class="font-semibold text-indigo-600">29. Равномерность распределения в геометрической модели:</span> Подразумевает, что вероятность попадания в любую часть области $\Omega$ пропорциональна мере этой части, а не зависит от ее расположения.</p>
+
+                <p><span class="font-semibold text-indigo-600">30. Применение геометрических вероятностей:</span> Задачи о встрече, задачи на бросание точек на отрезок или плоскость, оценка попадания в мишень.</p>
+            </div>
+
+            <h2 class="text-2xl font-bold text-gray-800 border-l-4 border-indigo-500 pl-3 pt-2 pb-2 mt-8">Формула полной вероятности и Байеса</h2>
+
+            <div class="text-gray-700 space-y-4">
+                <p><span class="font-semibold text-indigo-600">31. Формула полной вероятности и её область применения:</span> Используется для вычисления вероятности события $A$, которое может наступить при различных, заранее неизвестных условиях (гипотезах $H_i$), составляющих полную группу.</p>
+
+                <p><span class="font-semibold text-indigo-600">32. Доказательная структура формулы полной вероятности:</span> Основана на разложении события $A$ в сумму несовместимых событий $A = (A \cap H_1) \cup (A \cap H_2) \cup \ldots$, с последующим применением теоремы сложения и теоремы умножения: $$\displaystyle P(A) = \sum P(A \cap H_i) = \sum P(H_i) \cdot P(A|H_i)$$</p>
+
+                <p><span class="font-semibold text-indigo-600">33. Формула Байеса и её использование в обновлении вероятностей:</span> Позволяет пересчитать (обновить) априорные вероятности гипотез $P(H_i)$ после того, как стало известно о наступлении события $A$, получая апостериорные вероятности $P(H_i|A)$: $$\displaystyle P(H_i|A) = \frac{P(H_i) \cdot P(A|H_i)}{P(A)}$$</p>
+
+                <p><span class="font-semibold text-indigo-600">34. Интерпретация формулы Байеса через условные вероятности:</span> Связывает прямую условную вероятность $P(A|H_i)$ с обратной условной вероятностью $P(H_i|A)$.</p>
+            </div>
+
+            <h2 class="text-2xl font-bold text-gray-800 border-l-4 border-indigo-500 pl-3 pt-2 pb-2 mt-8">Повторные независимые испытания</h2>
+
+            <div class="text-gray-700 space-y-4">
+                <p><span class="font-semibold text-indigo-600">35. Повторные независимые испытания. Основные свойства:</span> Серия из $n$ испытаний, в каждом из которых вероятность успеха ($p$) и неудачи ($q=1-p$) остается постоянной, и результат одного испытания не влияет на результаты других.</p>
+
+                <p><span class="font-semibold text-indigo-600">36. Вероятностные модели в независимых испытаниях:</span> Основная модель — биномиальное распределение. Также применимы распределение Пуассона (редкие события) и нормальная аппроксимация (большое число испытаний).</p>
+
+                <p><span class="font-semibold text-indigo-600">37. Формула Бернулли:</span> Вероятность $P_n(k)$ того, что в $n$ независимых испытаниях событие $A$ наступит ровно $k$ раз: $$\displaystyle P_n(k) = C_n^k \cdot p^k \cdot q^{n-k}$$</p>
+
+                <p><span class="font-semibold text-indigo-600">38. Связь биномиального распределения с формулой Бернулли:</span> Формула Бернулли является законом распределения вероятностей для дискретной случайной величины $X$ — числа успехов в $n$ испытаниях, т.е. $X \sim B(n, p)$.</p>
+
+                <p><span class="font-semibold text-indigo-600">39. Формула Пуассона как предельный закон для редких событий:</span> Используется для аппроксимации биномиального распределения, когда $n$ велико, а $p$ мало (редкое событие), при $\lambda = n \cdot p = \text{const}$: $$\displaystyle P_k \approx \frac{\lambda^k}{k!} e^{-\lambda}$$</p>
+
+                <p><span class="font-semibold text-indigo-600">40. Условия применимости формулы Пуассона:</span> Большое число испытаний ($n \to \infty$) и малая вероятность успеха ($p \to 0$), при сохранении произведения $\lambda = n \cdot p$.</p>
+
+                <p><span class="font-semibold text-indigo-600">41. Локальная теорема Лапласа:</span> Используется для приближенного вычисления вероятности $P_n(k)$ (ровно $k$ успехов) при больших $n$: $$\displaystyle P_n(k) \approx \frac{1}{\sqrt{npq}} \cdot \varphi(x), \text{ где } \displaystyle x = \frac{k - np}{\sqrt{npq}}$$ а $\varphi(x)$ — плотность стандартного нормального распределения.</p>
+
+                <p><span class="font-semibold text-indigo-600">42. Интегральная теорема Лапласа и нормальная аппроксимация:</span> Используется для приближенного вычисления вероятности $P_n(k_1 \le k \le k_2)$ (число успехов от $k_1$ до $k_2$) при больших $n$: $$\displaystyle P_n(k_1 \le k \le k_2) \approx \Phi(x_2) - \Phi(x_1)$$ где $\Phi(x)$ — функция распределения стандартного нормального распределения.</p>
+
+                <p><span class="font-semibold text-indigo-600">43. Предельные теоремы и их роль в оценке вероятностей:</span> Теоремы Бернулли, Пуассона, Лапласа позволяют оценить вероятности для большого числа испытаний, упрощая вычисления биномиальной формулы и показывая стремление распределения к нормальному.</p>
+            </div>
+
+            <h2 class="text-2xl font-bold text-gray-800 border-l-4 border-indigo-500 pl-3 pt-2 pb-2 mt-8">Случайные величины</h2>
+
+            <div class="text-gray-700 space-y-4">
+                <p><span class="font-semibold text-indigo-600">44. Случайные величины и их классификация:</span> Величина, значение которой зависит от исхода случайного эксперимента. Классификация: дискретные (ДСВ) и непрерывные (НСВ).</p>
+
+                <p><span class="font-semibold text-indigo-600">45. Дискретные и непрерывные случайные величины. Отличия:</span></p>
+                <ul class="list-disc list-inside ml-4 space-y-1">
+                    <li>**ДСВ:** Принимает конечное или счетное множество изолированных значений (описывается законом распределения/рядом распределения).</li>
+                    <li>**НСВ:** Принимает любое значение из некоторого промежутка (описывается плотностью распределения).</li>
+                </ul>
+
+                <p><span class="font-semibold text-indigo-600">46. Закон распределения вероятностей и его свойства:</span> Соответствие между возможными значениями ДСВ и их вероятностями. Свойства: вероятности неотрицательны, сумма всех вероятностей равна 1.</p>
+
+                <p><span class="font-semibold text-indigo-600">47. Функция распределения случайной величины:</span> Функция $F(x) = P(X < x)$, определяющая вероятность того, что СВ $X$ примет значение меньше $x$.</p>
+
+                <p><span class="font-semibold text-indigo-600">48. Биномиальное распределение и его параметры:</span> Распределение числа успехов $k$ в $n$ независимых испытаниях с вероятностью успеха $p$. Параметры: $n$ (число испытаний), $p$ (вероятность успеха). $X \sim B(n, p)$.</p>
+
+                <p><span class="font-semibold text-indigo-600">49. Геометрическое распределение. Свойства и применение:</span> Распределение числа испытаний до первого успеха. Применяется для моделирования процессов до наступления первого события. Свойство "отсутствия памяти".</p>
+
+                <p><span class="font-semibold text-indigo-600">50. Свойства хвостового поведения геометрического распределения:</span> Вероятность $P(X \ge k)$ экспоненциально убывает с ростом $k$ (быстрое убывание "хвоста" распределения).</p>
+            </div>
+            
+            <h2 class="text-2xl font-bold text-gray-800 border-l-4 border-indigo-500 pl-3 pt-2 pb-2 mt-8">Числовые характеристики и законы</h2>
+
+            <div class="text-gray-700 space-y-4">
+                <p><span class="font-semibold text-indigo-600">51. Математическое ожидание дискретной случайной величины:</span> Среднее взвешенное значение СВ, где весами являются вероятности: $$\displaystyle M(X) = \sum_{i} x_i \cdot p_i$$</p>
+
+                <p><span class="font-semibold text-indigo-600">52. Дисперсия и её интерпретация:</span> Мера рассеяния (разброса) значений СВ вокруг математического ожидания: $$\displaystyle D(X) = M((X - M(X))^2)$$</p>
+
+                <p><span class="font-semibold text-indigo-600">53. Среднеквадратическое отклонение (СКО) и его связь с дисперсией:</span> $\displaystyle \sigma(X) = \sqrt{D(X)}$. Имеет ту же размерность, что и сама СВ, что облегчает интерпретацию разброса.</p>
+
+                <p><span class="font-semibold text-indigo-600">54. Закон больших чисел и его содержание:</span> При большом числе независимых испытаний среднее арифметическое наблюдаемых значений СВ стремится по вероятности к ее математическому ожиданию.</p>
+
+                <p><span class="font-semibold text-indigo-600">55. Теорема Чебышева и её применение:</span> Утверждает, что вероятность отклонения СВ от ее математического ожидания не более чем на $\varepsilon$ близка к 1: $$\displaystyle P(|X - M(X)| < \varepsilon) \ge 1 - \frac{D(X)}{\varepsilon^2}$$ Используется для оценки отклонений.</p>
+            </div>
+
+            <h2 class="text-2xl font-bold text-gray-800 border-l-4 border-indigo-500 pl-3 pt-2 pb-2 mt-8">Непрерывные случайные величины (НСВ)</h2>
+
+            <div class="text-gray-700 space-y-4">
+                <p><span class="font-semibold text-indigo-600">56. Плотность распределения вероятностей (ППВ) НСВ:</span> Функция $f(x)$ такая, что $P(x \le X < x + \Delta x) \approx f(x) \Delta x$. Неотрицательна, интеграл по всей оси равен 1.</p>
+
+                <p><span class="font-semibold text-indigo-600">57. Связь плотности распределения с функцией распределения:</span> Функция распределения $F(x)$ является интегралом от плотности распределения $f(x)$: $$\displaystyle F(x) = \int_{-\infty}^{x} f(t) dt$$ Обратно: $\displaystyle f(x) = F'(x)$.</p>
+
+                <p><span class="font-semibold text-indigo-600">58. Нормальное распределение как предельное:</span> Согласно центральной предельной теореме, распределение суммы большого числа независимых случайных величин, как правило, стремится к нормальному.</p>
+
+                <p><span class="font-semibold text-indigo-600">59. Свойства функций распределения и плотности:</span></p>
+                <ul class="list-disc list-inside ml-4 space-y-1">
+                    <li>$F(x)$: Неубывающая, $\lim_{x \to -\infty} F(x) = 0$, $\lim_{x \to \infty} F(x) = 1$.</li>
+                    <li>$f(x)$: Неотрицательна, $\displaystyle \int_{-\infty}^{\infty} f(x) dx = 1$.</li>
+                </ul>
+
+                <p><span class="font-semibold text-indigo-600">60. Моменты случайных величин и их роль в описании распределений:</span> Числовые характеристики, описывающие форму распределения: начальные моменты ($M(X^k)$) и центральные моменты ($M((X-M(X))^k)$).</p>
+
+                <p><span class="font-semibold text-indigo-600">61. Математическое ожидание НСВ:</span> $$\displaystyle M(X) = \int_{-\infty}^{\infty} x \cdot f(x) dx$$</p>
+
+                <p><span class="font-semibold text-indigo-600">62. Дисперсия НСВ:</span> $$\displaystyle D(X) = \int_{-\infty}^{\infty} (x - M(X))^2 \cdot f(x) dx$$</p>
+
+                <p><span class="font-semibold text-indigo-600">63. Среднеквадратическое отклонение НСВ:</span> $\displaystyle \sigma(X) = \sqrt{D(X)}$.</p>
+
+                <p><span class="font-semibold text-indigo-600">64. Ковариация непрерывных СВ:</span> Мера линейной зависимости двух СВ $X$ и $Y$: $\text{Cov}(X, Y) = M((X - M(X))(Y - M(Y)))$.</p>
+
+                <p><span class="font-semibold text-indigo-600">65. Коэффициент корреляции и его числовой диапазон:</span> Нормированная мера линейной зависимости: $$\displaystyle \rho(X, Y) = \frac{\text{Cov}(X, Y)}{\sigma(X)\sigma(Y)}$$ Диапазон: $-1 \le \rho \le 1$.</p>
+
+                <p><span class="font-semibold text-indigo-600">66. Медиана непрерывного распределения:</span> Значение $M_e$, для которого $P(X < M_e) = P(X > M_e) = 0.5$, т.е. $F(M_e) = 0.5$.</p>
+
+                <p><span class="font-semibold text-indigo-600">67. Мода непрерывного распределения:</span> Значение $M_o$, в котором плотность распределения $f(x)$ достигает максимума.</p>
+
+                <p><span class="font-semibold text-indigo-600">68. Квантили непрерывного распределения:</span> Значение $x_p$, для которого $F(x_p) = p$. Делят область распределения на части в пропорции $p$ и $1-p$.</p>
+
+                <p><span class="font-semibold text-indigo-600">69. Моментные характеристики НСВ:</span> Математическое ожидание, дисперсия, асимметрия, эксцесс (см. п. 60–63).</p>
+
+                <p><span class="font-semibold text-indigo-600">70. Центральные моменты непрерывного распределения:</span> Моменты относительно математического ожидания: $\displaystyle \mu_k = M((X - M(X))^k)$. $\mu_1 = 0$, $\mu_2 = D(X)$.</p>
+            </div>
+
+            <h2 class="text-2xl font-bold text-gray-800 border-l-4 border-indigo-500 pl-3 pt-2 pb-2 mt-8">Нормальное распределение</h2>
+
+            <div class="text-gray-700 space-y-4">
+                <p><span class="font-semibold text-indigo-600">71. Плотность нормального распределения и её свойства:</span> Функция Гаусса: $$\displaystyle f(x) = \frac{1}{\sigma\sqrt{2\pi}} e^{-\frac{(x-\mu)^2}{2\sigma^2}}$$ Симметрична относительно $\mu$, имеет максимум в $\mu$, при $\sigma$ — определяет ширину.</p>
+
+                <p><span class="font-semibold text-indigo-600">72. Функция распределения стандартного нормального распределения:</span> $$\displaystyle \Phi(x) = \frac{1}{\sqrt{2\pi}} \int_{-\infty}^{x} e^{-\frac{t^2}{2}} dt$$ Параметры: $M(X)=0$, $D(X)=1$.</p>
+
+                <p><span class="font-semibold text-indigo-600">73. Свойства кривой нормального распределения:</span> Колоколообразная, симметрична относительно прямой $x=\mu$, точки перегиба в $\mu \pm \sigma$.</p>
+
+                <p><span class="font-semibold text-indigo-600">74. Эмпирическое правило «трёх сигм»:</span> Для нормально распределенной СВ вероятность попадания ее значения в интервал $(\mu - 3\sigma, \mu + 3\sigma)$ очень близка к единице ($P \approx 0.9973$).</p>
+
+                <p><span class="font-semibold text-indigo-600">75. Стандартизация нормальной случайной величины:</span> Преобразование $\displaystyle Z = \frac{X - \mu}{\sigma}$, в результате которого СВ $X \sim N(\mu, \sigma^2)$ преобразуется в стандартную $Z \sim N(0, 1)$.</p>
+
+                <p><span class="font-semibold text-indigo-600">76. Преобразование нормального распределения при линейных операциях:</span> Если $X \sim N(\mu, \sigma^2)$, то линейное преобразование $Y = aX + b$ также имеет нормальное распределение: $Y \sim N(a\mu + b, a^2\sigma^2)$.</p>
+
+                <p><span class="font-semibold text-indigo-600">77. Аппроксимация сумм СВ нормальным распределением:</span> Центральная предельная теорема (ЦПТ) утверждает, что при некоторых условиях сумма большого числа независимых случайных величин распределена приблизительно нормально.</p>
+
+                <p><span class="font-semibold text-indigo-600">78. Роль нормального распределения в предельных теоремах:</span> Является предельным распределением в ЦПТ и в интегральной теореме Лапласа.</p>
+
+                <p><span class="font-semibold text-indigo-600">79. Геометрические свойства графика плотности нормального закона:</span> Колоколообразная форма, симметрия относительно среднего, асимптотическое приближение к оси абсцисс.</p>
+
+                <p><span class="font-semibold text-indigo-600">80. Нормальное распределение как модель естественных процессов:</span> Часто используется для описания ошибок измерений, роста, веса, интеллекта и других массовых явлений.</p>
+            </div>
+
+            <h2 class="text-2xl font-bold text-gray-800 border-l-4 border-indigo-500 pl-3 pt-2 pb-2 mt-8">Математическая статистика</h2>
+
+            <div class="text-gray-700 space-y-4">
+                <p><span class="font-semibold text-indigo-600">81. Эмпирическая функция распределения выборки:</span> Функция $\displaystyle F_n^*(x) = \frac{n_x}{n}$, где $n_x$ — число выборочных значений, меньших $x$, а $n$ — объем выборки.</p>
+
+                <p><span class="font-semibold text-indigo-600">82. Выборочные моменты и их вычисление:</span></p>
+                <ul class="list-disc list-inside ml-4 space-y-1">
+                    <li>**Начальный момент** $k$**-го порядка:** $\displaystyle m_k = \frac{1}{n} \sum_{i=1}^{n} x_i^k$.</li>
+                    <li>**Центральный момент** $k$**-го порядка:** $\displaystyle \mu_k = \frac{1}{n} \sum_{i=1}^{n} (x_i - \bar{x})^k$.</li>
+                </ul>
+
+                <p><span class="font-semibold text-indigo-600">83. Выборочное среднее и его свойства:</span> $$\displaystyle \bar{x} = \frac{1}{n} \sum_{i=1}^{n} x_i$$ Является несмещенной и состоятельной оценкой математического ожидания $M(X)$.</p>
+
+                <p><span class="font-semibold text-indigo-600">84. Выборочная дисперсия и её несмещённая оценка:</span></p>
+                <ul class="list-disc list-inside ml-4 space-y-1">
+                    <li>**Выборочная дисперсия:** $\displaystyle D^* = \frac{1}{n} \sum_{i=1}^{n} (x_i - \bar{x})^2$. (Смещенная).</li>
+                    <li>**Несмещенная оценка дисперсии:** $\displaystyle s^2 = \frac{1}{n-1} \sum_{i=1}^{n} (x_i - \bar{x})^2$.</li>
+                </ul>
+
+                <p><span class="font-semibold text-indigo-600">85. Гистограмма как способ представления выборочного распределения:</span> Ступенчатая диаграмма, где прямоугольники строятся на интервалах, а их площади пропорциональны частотам попадания значений в эти интервалы.</p>
+
+                <p><span class="font-semibold text-indigo-600">86. Выборочная вариация и её значение:</span> Характеристика рассеяния (разброса) данных в выборке, измеряемая дисперсией или СКО.</p>
+
+                <p><span class="font-semibold text-indigo-600">87. Статистический ряд распределения и правила его построения:</span> Перечень интервалов (или значений) и соответствующих им частот или относительных частот. Правила: непересекающиеся интервалы, охват всего диапазона данных, одинаковая длина интервалов (для гистограммы).</p>
+
+                <p><span class="font-semibold text-indigo-600">88. Частоты и относительные частоты в выборочном распределении:</span></p>
+                <ul class="list-disc list-inside ml-4 space-y-1">
+                    <li>**Частота ($n_i$):** Число раз, которое данное значение (или интервал) встретилось в выборке.</li>
+                    <li>**Относительная частота ($w_i$):** $\displaystyle w_i = \frac{n_i}{n}$. Оценка вероятности.</li>
+                </ul>
+
+                <p><span class="font-semibold text-indigo-600">89. Оценка параметров распределения на основе выборки:</span> Использование выборочных характеристик (выборочное среднее, дисперсия) в качестве оценок неизвестных параметров теоретического распределения (мат. ожидания, дисперсии).</p>
+
+                <p><span class="font-semibold text-indigo-600">90. Связь статистического распределения выборки с теоретическим распределением:</span> При увеличении объема выборки ($n \to \infty$) относительные частоты стремятся к вероятностям, а эмпирическая функция распределения стремится к теоретической функции распределения (теорема Гливенко-Кантелли).</p>
+            </div>
+            
+        </div>
+        
+    </div>
+</body>
+</html>
